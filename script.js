@@ -33,7 +33,7 @@ const buttons = document.querySelectorAll('.stream-button');
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const service = button.getAttribute('data-service');
-        const paymentMessage = `Por favor, realice el pago de su cuenta de ${service} mediante Nequi al número 3148618307.`;
+        const paymentMessage = `Por favor, realice el pago de su cuenta de ${service} mediante Nequi al número 3227669390.`;
         alert(paymentMessage);
         const whatsappMessage = `Ya pagué mi cuenta de ${service}`;
         window.open(`https://api.whatsapp.com/send?phone=+573227669390&text=${encodeURIComponent(whatsappMessage)}`);
