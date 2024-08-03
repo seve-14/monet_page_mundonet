@@ -1,0 +1,135 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1d1f27;
+    color: #ffffff;
+}
+
+header {
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header h2 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+main {
+    display: flex;
+    padding: 40px 20px;
+}
+
+.left-side {
+    flex: 1;
+    padding: 20px;
+}
+
+.welcome-message {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #a8dadc;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.images {
+    margin-top: 20px;
+}
+
+.images img {
+    width: 100px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.right-side {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 20px;
+    background: #2a2d37;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#main-interface .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.stream-button {
+    margin: 5px 0;
+    width: 200px;
+    padding: 10px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.stream-button:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    background-color: #0f2027;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
