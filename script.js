@@ -33,13 +33,9 @@ const buttons = document.querySelectorAll('.stream-button');
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const service = button.getAttribute('data-service');
-        let whatsappNumber;
-        if (service === 'Soporte Técnico') {
-            whatsappNumber = '+573148618307';
-        } else {
-            whatsappNumber = Math.random() > 0.5 ? '+573148618307' : '+573227669390';
-        }
-        const message = `Te veo en ${service}`;
-        window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`);
+        const paymentMessage = `Por favor, realice el pago de su cuenta de ${service} mediante Nequi al número 3148618307.`;
+        alert(paymentMessage);
+        const whatsappMessage = `Ya pagué mi cuenta de ${service}`;
+        window.open(`https://api.whatsapp.com/send?phone=+573227669390&text=${encodeURIComponent(whatsappMessage)}`);
     });
 });
