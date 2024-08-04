@@ -96,6 +96,12 @@ input {
     border-radius: 5px;
     border: none;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+input:focus {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    outline: none;
 }
 
 /* Botones futuristas */
@@ -114,6 +120,7 @@ button {
 button:hover {
     background: linear-gradient(45deg, #ff4b2b, #ff416c);
     transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
 #show-login, #register-form button {
