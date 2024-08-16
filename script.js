@@ -1,46 +1,55 @@
-document.getElementById('register-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    localStorage.setItem('email', email);
-    localStorage.setItem('password', password);
+document.addEventListener('DOMContentLoaded', () => {
+    const registerForm = document.getElementById('register-form');
+    const loginForm = document.getElementById('login-form');
+    const showLoginBtn = document.getElementById('show-login');
+    const registerSection = document.getElementById('register-section');
+    const loginSection = document.getElementById('login-section');
+    const mainInterface = document.getElementById('main-interface');
 
-    document.getElementById('register-form').innerHTML = '<p>Registrando...</p>';
+    registerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
 
-    setTimeout(() => {
-        alert('Usuario registrado exitosamente.');
-        document.getElementById('register-section').style.display = 'none';
-        document.getElementById('login-section').style.display = 'block';
-    }, 2000); // 2 segundos de espera
-});
+        registerForm.innerHTML = '<p>Registrando...</p>';
 
-document.getElementById('login-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = document.getElementById('login-email').value;
-    const password = document.getElementById('login-password').value;
-    const storedEmail = localStorage.getItem('email');
-    const storedPassword = localStorage.getItem('password');
+        setTimeout(() => {
+            alert('Usuario registrado exitosamente.');
+            registerSection.style.display = 'none';
+            loginSection.style.display = 'block';
+        }, 2000);
+    });
 
-    if (email === storedEmail && password === storedPassword) {
-        alert('Inicio de sesión exitoso.');
-        document.getElementById('login-section').style.display = 'none';
-        document.getElementById('main-interface').style.display = 'block';
-    } else {
-        alert('Correo electrónico o contraseña incorrectos.');
-    }
-});
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+        const storedEmail = localStorage.getItem('email');
+        const storedPassword = localStorage.getItem('password');
 
-document.getElementById('show-login').addEventListener('click', function() {
-    document.getElementById('register-section').style.display = 'none';
-    document.getElementById('login-section').style.display = 'block';
-});
+        if (email === storedEmail && password === storedPassword) {
+            alert('Inicio de sesión exitoso.');
+            loginSection.style.display = 'none';
+            mainInterface.style.display = 'block';
+        } else {
+            alert('Correo electrónico o contraseña incorrectos.');
+        }
+    });
 
-const streamButtons = document.querySelectorAll('.stream-button');
-streamButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        const service = this.getAttribute('data-service');
-        const whatsappNumber = '+573148618307';
-        const message = `Ya pagué mi cuenta de ${service}.`;
-        window.location.href = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
+    showLoginBtn.addEventListener('click', function() {
+        registerSection.style.display = 'none';
+        loginSection.style.display = 'block';
+    });
+
+    const streamButtons = document.querySelectorAll('.stream-button');
+    streamButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const service = this.getAttribute('data-service');
+            const whatsappNumber = '+573227669390';
+            const message = `Ya pagué mi cuenta de ${service}.`;
+            window.location.href = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
+        });
     });
 });
