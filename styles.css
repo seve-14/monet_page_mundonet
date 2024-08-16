@@ -1,29 +1,32 @@
-/* Estilos generales */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1d1f27;
+    background-color: #0a0e17;
     color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Estilos del header */
 header {
-    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
     color: white;
     text-align: center;
     padding: 30px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 header h2 {
     margin: 10px 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .subtitle {
@@ -32,26 +35,24 @@ header h2 {
     opacity: 0.8;
 }
 
-/* Estilos del main */
 main {
     display: flex;
     flex-wrap: wrap;
     padding: 40px 20px;
+    flex-grow: 1;
 }
 
-/* Estilos de la izquierda */
-.left-side {
+.left-side, .right-side {
     flex: 1;
     padding: 20px;
-    text-align: center;
 }
 
 .welcome-message {
     font-size: 1.5rem;
-    font-style: italic;
     color: #a8dadc;
     line-height: 1.5;
     text-align: left;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .images {
@@ -66,60 +67,59 @@ main {
     margin: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
-/* Estilos de la derecha */
-.right-side {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
+.images img:hover {
+    transform: scale(1.1);
 }
 
-section {
+.section {
     margin-bottom: 20px;
-    background: #2a2d37;
+    background: rgba(42, 45, 55, 0.7);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
 }
 
 input {
-    padding: 10px;
+    padding: 12px;
     width: 100%;
     max-width: 300px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    margin-bottom: 15px;
+    border-radius: 25px;
     border: none;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
 }
 
 input:focus {
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Botones futuristas */
 button {
     padding: 12px 24px;
     background: linear-gradient(45deg, #ff416c, #ff4b2b);
     color: #ffffff;
     border: none;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 25px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     font-size: 1rem;
+    font-family: 'Orbitron', sans-serif;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 button:hover {
     background: linear-gradient(45deg, #ff4b2b, #ff416c);
-    transform: scale(1.05);
+    transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -127,51 +127,47 @@ button:hover {
     background: linear-gradient(45deg, #3498db, #8e44ad);
 }
 
-/* Estilos específicos para el botón de compra */
 .stream-button {
-    margin: 5px 0;
-    width: 200px;
-    padding: 10px;
-    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    margin: 10px 0;
+    width: 220px;
+    padding: 12px;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 25px;
+    transition: all 0.3s ease;
 }
 
 .stream-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 footer {
     background-color: #0f2027;
     color: white;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    padding: 15px 0;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.nequi-image {
+.nequi-image, .qr {
     margin-top: 20px;
     width: 100%;
     max-width: 200px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
-/* Estilos responsivos */
+.nequi-image:hover, .qr:hover {
+    transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
     main {
         flex-direction: column;
-        padding: 20px;
-    }
-
-    .left-side, .right-side {
-        padding: 10px;
     }
 
     .stream-button {
@@ -181,11 +177,11 @@ footer {
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     header h2 {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
     }
 
     .subtitle {
@@ -200,11 +196,4 @@ footer {
         width: 80px;
         margin: 5px;
     }
-}
-.qr {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 200px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
